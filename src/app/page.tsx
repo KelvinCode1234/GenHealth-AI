@@ -59,8 +59,8 @@ export default function Home() {
       <main className="flex-1">
         <div className="container mx-auto grid grid-cols-1 gap-12 px-4 py-8 md:grid-cols-2 md:py-12">
           <div className="flex flex-col space-y-4">
-            <h2 className="text-3xl font-bold tracking-tight">Predict Your Genotype & Blood Group</h2>
-            <p className="text-muted-foreground">
+            <h2 className="text-3xl font-bold tracking-tight text-balance md:text-4xl">Predict Your Genotype & Blood Group</h2>
+            <p className="text-muted-foreground text-balance">
               Enter your parents' details to get an AI-powered prediction of your possible genotype and blood group probabilities.
             </p>
             <PredictionForm
