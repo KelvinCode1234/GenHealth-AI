@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import type { predictGenotypeAndBloodGroupOutput } from "@/ai/flows/predict-genotype-blood-group";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -38,16 +39,18 @@ export default function Home() {
               <DialogHeader>
                 <DialogTitle>Understanding Your Results</DialogTitle>
               </DialogHeader>
-              <div className="prose prose-sm max-w-none text-foreground dark:prose-invert">
-                <h3 className="text-lg font-semibold">What does Genotype mean?</h3>
-                <p>Genotype refers to your genetic makeup, specifically the combination of alleles for a particular gene. For hemoglobin, common genotypes include AA, AS, and SS. Knowing your genotype is crucial for understanding your risk of inheriting or passing on genetic conditions like sickle cell anemia.</p>
-                <h3 className="text-lg font-semibold">What does Blood Group mean?</h3>
-                <p>Your blood group (or blood type) is determined by the presence or absence of specific antigens on the surface of your red blood cells. The main blood groups are A, B, AB, and O, each of which can be Rh-positive (+) or Rh-negative (-). Your blood group is important for blood transfusions and during pregnancy.</p>
-                <h3 className="text-lg font-semibold">Marriage/Compatibility Implications</h3>
-                <p>When planning for a family, knowing your and your partner's genotype is important. For example, if both partners have the AS genotype, there is a 25% chance of having a child with SS genotype (sickle cell anemia) in each pregnancy. Blood group compatibility (especially the Rh factor) is also important to prevent issues like Rh disease in newborns.</p>
-                <h3 className="text-lg font-semibold">Health Importance</h3>
-                <p>Knowing your genotype and blood group is vital for your health. It can help in emergency situations requiring blood transfusions, inform family planning decisions, and help you understand your risk for certain genetic conditions. This knowledge empowers you to make informed decisions about your health and lifestyle.</p>
-              </div>
+              <ScrollArea className="max-h-[70vh] pr-6">
+                <div className="prose prose-sm max-w-none text-foreground dark:prose-invert">
+                  <h3 className="text-lg font-semibold">What does Genotype mean?</h3>
+                  <p>Genotype refers to your genetic makeup, specifically the combination of alleles for a particular gene. For hemoglobin, common genotypes include AA, AS, and SS. Knowing your genotype is crucial for understanding your risk of inheriting or passing on genetic conditions like sickle cell anemia.</p>
+                  <h3 className="text-lg font-semibold">What does Blood Group mean?</h3>
+                  <p>Your blood group (or blood type) is determined by the presence or absence of specific antigens on the surface of your red blood cells. The main blood groups are A, B, AB, and O, each of which can be Rh-positive (+) or Rh-negative (-). Your blood group is important for blood transfusions and during pregnancy.</p>
+                  <h3 className="text-lg font-semibold">Marriage/Compatibility Implications</h3>
+                  <p>When planning for a family, knowing your and your partner's genotype is important. For example, if both partners have the AS genotype, there is a 25% chance of having a child with SS genotype (sickle cell anemia) in each pregnancy. Blood group compatibility (especially the Rh factor) is also important to prevent issues like Rh disease in newborns.</p>
+                  <h3 className="text-lg font-semibold">Health Importance</h3>
+                  <p>Knowing your genotype and blood group is vital for your health. It can help in emergency situations requiring blood transfusions, inform family planning decisions, and help you understand your risk for certain genetic conditions. This knowledge empowers you to make informed decisions about your health and lifestyle.</p>
+                </div>
+              </ScrollArea>
             </DialogContent>
           </Dialog>
         </div>
