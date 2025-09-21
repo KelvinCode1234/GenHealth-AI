@@ -35,11 +35,13 @@ export function PredictionResult({ isLoading, result }: PredictionResultProps) {
 
   if (!result) {
     return (
-      <Card className="flex h-full min-h-[400px] items-center justify-center border-dashed">
+      <Card className="flex h-full min-h-[400px] items-center justify-center border-dashed p-4">
         <div className="text-center text-muted-foreground">
           <Droplets className="mx-auto h-12 w-12" />
-          <p className="mt-4 text-lg">Your prediction results will appear here.</p>
-          <p className="text-sm">
+          <p className="mt-4 text-lg text-balance">
+            Your prediction results will appear here.
+          </p>
+          <p className="text-sm text-balance">
             Fill out the form to get started.
           </p>
         </div>
