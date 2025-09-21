@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'ABO Genie',
+  title: 'GenHealth AI',
   description: 'Predict your Genotype and Blood Group with a little information.',
 };
 

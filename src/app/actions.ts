@@ -1,27 +1,29 @@
 'use server';
 
-import { predictBloodType, PredictBloodTypeInput, PredictBloodTypeOutput } from '@/ai/flows/predict-blood-type';
+import { predictGenotypeAndBloodGroup, predictGenotypeAndBloodGroupInput, predictGenotypeAndBloodGroupOutput } from '@/ai/flows/predict-genotype-blood-group';
 import { z } from 'zod';
 
 const formSchema = z.object({
-  fatherBloodType: z.enum(['A', 'B', 'AB', 'O']),
-  motherBloodType: z.enum(['A', 'B', 'AB', 'O']),
-  knownGenotype: z.string().optional(),
-  familyHistory: z.string().optional(),
+  fatherBloodType: z.string().min(1, "Father's blood group is required."),
+  motherBloodType: z.string().min(1, "Mother's blood group is required."),
+  fatherGenotype: z.string().optional(),
+  motherGenotype: z.string().optional(),
+  ethnicity: z.string().optional(),
+  healthNotes: z.string().optional(),
 });
 
 type PredictionResult = {
   success: true;
-  data: PredictBloodTypeOutput;
+  data: predictGenotypeAndBloodGroupOutput;
 } | {
   success: false;
   error: string;
 };
 
-export async function getPrediction(data: PredictBloodTypeInput): Promise<PredictionResult> {
+export async function getPrediction(data: predictGenotypeAndBloodGroupInput): Promise<PredictionResult> {
   try {
     const validatedData = formSchema.parse(data);
-    const result = await predictBloodType(validatedData);
+    const result = await predictGenotypeAndBloodGroup(validatedData);
     return { success: true, data: result };
   } catch (error) {
     console.error('Error during prediction:', error);

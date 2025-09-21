@@ -1,5 +1,4 @@
 import { config } from 'dotenv';
 config();
 
-import '@/ai/flows/predict-blood-type.ts';
-import '@/ai/flows/explain-prediction.ts';
+import '@/ai/flows/predict-genotype-blood-group.ts';
